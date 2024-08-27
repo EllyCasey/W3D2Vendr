@@ -1,9 +1,9 @@
 
 export class Snack {
-    constructor(snackName, snackIcon, snackPrice) {
-        this.name = snackName
-        this.icon = snackIcon
-        this.price = snackPrice
+    constructor(data) {
+        this.name = data.name
+        this.imgURL = data.imgURL
+        this.price = data.price
     }
 
     get SnackHTMLTemplate() {
@@ -11,7 +11,7 @@ export class Snack {
         <section class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-4 card">
-            <p>${this.name}</p><span>${this.icon}</span>
+            <p>${this.name}</p><span>${this.imgURL}</span>
             <p>${this.price.toFixed(2)}</p>
             <button onclick="app.SnacksController.addSnack('${this.name}')" class="btn btn-light">Add Snack</button>
           </div>
