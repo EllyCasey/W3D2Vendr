@@ -9,11 +9,10 @@ export class Snack {
     get SnackHTMLTemplate() {
         return /*html*/ `
         <section class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-4 card">
-            <p>${this.name}</p>
-            <p>${this.price}</p>
-            <p id="snackQuantity">0</p>
+            <p>${this.name}</p><span>${this.icon}</span>
+            <p>${this.price.toFixed(2)}</p>
             <button onclick="app.SnacksController.addSnack('${this.name}')" class="btn btn-light">Add Snack</button>
           </div>
         </div>
